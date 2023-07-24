@@ -23,12 +23,23 @@
 			#text {
 				color: white;
 			}
+
+			#reload {
+				font-family: "Poppins", sans-serif;
+				background: none;
+				border: none;
+				outline: none;
+				cursor: pointer;
+				color: white;
+				font-size: 1vw;
+			}
 		</style>
 	</head>
 
 	<body>
-		<div style="display:flex;justify-content: center;align-items:center;height:100%">
+		<div style="display:flex;justify-content: center;align-items:center;height:100%;flex-direction:column;gap:5%">
 			<h1 id="title">Today Somebody <span id="text">Learned to Swim</span></h1>
+			<button onclick="reload(this)" id="reload">Reload</button>
 		</div>
 	</body>
 
@@ -41,5 +52,9 @@
 
 		document.body.style.backgroundColor = colours[Math.floor(Math.random() * colours.length)]
 		document.getElementById("text").innerHTML = text[Math.floor(Math.random() * text.length)]
+
+		function reload(e) {
+			window.location.reload(false)
+		}
 	</script>
 </html>
